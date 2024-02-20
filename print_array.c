@@ -1,6 +1,10 @@
 #include "sort.h"
-
-
+/**
+ * print_array - prints an array of ints
+ * @array: array of int
+ * @size: size of array
+ * Return: Nothing
+*/
 void print_array(const int *array, size_t size)
 {
     size_t i;
