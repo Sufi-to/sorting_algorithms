@@ -1,12 +1,14 @@
 #include "sort.h"
-
-void marrays(int *array, size_t start, size_t mid, size_t end)
+/**
+ * 
+*/
+void marrays(int *array, int start, int mid, int end)
 {
-    size_t i = 0;
-    size_t tmpmid = mid;
-    size_t tmpstart = start;
-    size_t tmpstart2 = start;
-    size_t res[end - start + 1];
+    int i = 0;
+    int tmpmid = mid;
+    int tmpstart = start;
+    int tmpstart2 = start;
+    int res[end - start + 1];
     while (start < tmpmid && mid <= end && i <= end - tmpstart)
     {
         if (array[start] > array[mid])
@@ -38,10 +40,12 @@ void marrays(int *array, size_t start, size_t mid, size_t end)
         tmpstart++;
     }
 }
-
-void msort(int *array, size_t len, size_t start, size_t end)
+/**
+ *
+*/
+void msort(int *array, int len, int start, int end)
 {
-    size_t mid;
+    int mid;
     if (len >= 2)
     {
         mid = len / 2;
@@ -50,9 +54,11 @@ void msort(int *array, size_t len, size_t start, size_t end)
         marrays(array, start, start + mid, end);
     }
 }
-
-void merge_sort(int *array, size_t size)
+/**
+ *
+*/
+void merge_sort(int *array, int len)
 {
-    msort(array, size, 0, size - 1);
+    msort(array, len, 0, len - 1);
 }
 

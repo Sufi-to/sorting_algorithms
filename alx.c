@@ -53,7 +53,7 @@ void msort(int *array, int len, int start, int end)
     }
 }
 
-void mergesort(int *array, int len)
+void merge_sort(int *array, int len)
 {
     msort(array, len, 0, len - 1);
 }
