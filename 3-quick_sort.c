@@ -22,14 +22,11 @@ void swap(int *x, int *y)
  * @high: higher index
  * Return: int number
 */
-int lomuto_partition(int *array, size_t size, size_t low, size_t high)
+int lomuto_partition(int *array, size_t size, int low, int high)
 {
-	int i, j
-	int *pi;
+	int *pi, i, j;
 
-	pi = array + high
-
-
+	pi = array + high;
 	for (i = j = low; j < high; j++)
 	{
 		if (array[j] < *pi)
@@ -60,11 +57,13 @@ int lomuto_partition(int *array, size_t size, size_t low, size_t high)
  * @high: higher limit size
  * Return: Nothing
 */
-void quickSortup(int *array, size_t size, size_t low, size_t high)
+void quickSortup(int *array, size_t size, int low, int high)
 {
+	int pi_ind;
+
 	if (high - low > 0)
 	{
-		int pi_ind = lomuto_partition(array, size, low, high);
+		pi_ind = lomuto_partition(array, size, low, high);
 
 		quickSortup(array, size, low, pi_ind - 1);
 		quickSortup(array, size, pi_ind + 1, high);
@@ -83,4 +82,3 @@ void quick_sort(int *array, size_t size)
 		return;
 	quickSortup(array, size, 0, size - 1);
 }
-
