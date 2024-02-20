@@ -13,6 +13,8 @@ void selection_sort(int *array, size_t size)
 	int flag = 0;
 	int key;
 
+	if (!array || size < 2)
+		return;
 	while (i < size - 1)
 	{
 		key = array[i];
